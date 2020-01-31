@@ -34,11 +34,11 @@ class Sorting {
   }
 
   def sortInBubble(array: Array[Int], startFromIndex: Int, flagSwapped: Boolean): Array[Int]= {
-    if (array.length - startFromIndex < 2) {
+    if (array.length - startFromIndex < 2 && !flagSwapped) {
       array
     }
     else {
-      if (array(startFromIndex) > array(startFromIndex + 1)) {
+      if (array.length - startFromIndex >= 2 && array(startFromIndex) > array(startFromIndex + 1) ) {
         sortInBubble(swap(array, startFromIndex, startFromIndex + 1), startFromIndex + 1, true)
       } else if (array.length - startFromIndex < 2) {
         if (flagSwapped) sortInBubble(array, 0, false) else array
@@ -46,7 +46,6 @@ class Sorting {
       else sortInBubble(array, startFromIndex + 1, flagSwapped)
     }
   }
-
 
   def bubbleSort(array: Array[Int]): Array[Int] = {
     //todo: Add Logic
