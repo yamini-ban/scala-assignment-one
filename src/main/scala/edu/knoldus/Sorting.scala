@@ -12,7 +12,6 @@ class Sorting {
         }
         else {
           array(partiallySortedElement + 1) = temp
-//          partiallySortedElement = -1
         }
       }
 
@@ -22,7 +21,6 @@ class Sorting {
 
   def selectionSort(array: Array[Int]): Array[Int] = {
     //todo: Add Logic
-
     array
   }
 
@@ -40,27 +38,16 @@ class Sorting {
     else {
       if (array.length - startFromIndex >= 2 && array(startFromIndex) > array(startFromIndex + 1) ) {
         sortInBubble(swap(array, startFromIndex, startFromIndex + 1), startFromIndex + 1, true)
-      } else if (array.length - startFromIndex < 2) {
-        if (flagSwapped) sortInBubble(array, 0, false) else array
       }
-      else sortInBubble(array, startFromIndex + 1, flagSwapped)
+      else if (array.length - startFromIndex < 2) {
+        if (flagSwapped) sortInBubble(array, 0, false) else array
+      } else sortInBubble(array, startFromIndex + 1, flagSwapped)
     }
   }
 
   def bubbleSort(array: Array[Int]): Array[Int] = {
     //todo: Add Logic
-//    for (noOfPasses <- 0 to array.length - 2) {
-//      for (currentElementIndex <- 0 until array.length - noOfPasses - 1) {
-//        if (array(currentElementIndex) > array(currentElementIndex + 1)) {
-//          val temp = array(currentElementIndex)
-//          array(currentElementIndex) = array(currentElementIndex + 1)
-//          array(currentElementIndex + 1) = temp
-//        }
-//      }
-//    }
-//    array
     if(array.length <= 1) array else sortInBubble(array, 0, false)
-
   }
 
 }
